@@ -16,7 +16,7 @@ fi
 
 
 dnf install $1 &>>$LOGFILE
-validate() $? "installing $1"
+validate $? "installing $1"
 
 validate(){
     if [ $1 -ne 0 ]
