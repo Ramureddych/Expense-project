@@ -6,7 +6,7 @@ TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 
 
-if[ $USERID -ne 0 ]
+if [ $USERID -ne 0 ]
 then
     echo "you are not a super user"
     exit 1
