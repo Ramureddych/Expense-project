@@ -35,6 +35,9 @@ systemctl enable mysqld &>>$LOGFILE
 validate $? "enabled mysqld service"
 
 
+systemctl start mysqld &>>$LOGFILE
+validate $? "started mysqld service"
+
 
 
 
