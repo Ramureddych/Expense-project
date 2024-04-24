@@ -5,6 +5,16 @@ SCRIPT_NAME=$(echo $0 | cut -d "." -f1 )
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 
+validate(){
+    if [ $1 -ne 0 ]
+    then 
+        echo "$2 is failing..."
+        exit 1
+    else
+        echo "$2 is success"
+    fi        
+}
+
 
 
 
@@ -22,15 +32,7 @@ validate $? "installing mysql-server"
 
 
 
-validate(){
-    if [ $1 -ne 0 ]
-    then 
-        echo "$2 is failing..."
-        exit 1
-    else
-        echo "$2 is success"
-    fi        
-}
+
 
 
 
