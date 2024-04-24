@@ -38,6 +38,11 @@ validate $? "enabled mysqld service"
 systemctl start mysqld &>>$LOGFILE
 validate $? "started mysqld service"
 
+mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOGFILE
+validate $? "sets root password dor mysqlservice"
+
+
+
 
 
 
