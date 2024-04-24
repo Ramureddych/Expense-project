@@ -15,8 +15,8 @@ else
 fi
 
 
-dnf install $1 &>>$LOGFILE
-validate $? "installing $1"
+dnf install mysql-server -y  &>>$LOGFILE
+validate $? "installing mysql-server"
 
 validate(){
     if [ $1 -ne 0 ]
