@@ -1,11 +1,13 @@
 #!/bin/bash
 
 USERID=$(id -u)
-SCRIPT_NAME=$(echo $0 | cut -d "." -f1 )
+
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
+SCRIPT_NAME=$(echo $0 | cut -d "." -f1 )
 
 validate(){
+
     if [ $1 -ne 0 ]
     then 
         echo "$2 is failing..."
@@ -40,8 +42,6 @@ validate $? "started mysqld service"
 
 mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOGFILE
 validate $? "sets root password dor mysqlservice"
-
-
 
 
 
