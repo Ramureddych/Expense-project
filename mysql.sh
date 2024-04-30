@@ -5,8 +5,6 @@ USERID=$(id -u)
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1 )
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
-echo "please enter the db password"
-read -s my_root_password
 
 
 validate(){
@@ -50,10 +48,10 @@ validate $? "started mysqld service"
 #this below code is for code to be idempotent in nature
 
 
-mysql -h db.chilaka.fun -uroot -p${my_root_password} -e 'show databases;' &>>LOGFILE
+mysql -h db.chilaka.fun -uroot -pExpenseApp@1 -e 'show databases;' &>>LOGFILE
 if [ $? -ne 0 ]
 then 
-    echo "mysql_secure_installation --set-root-pass ${my_root_passsword} &>>LOGFILE"
+    echo "mysql_secure_installation --set-root-pass  &>>LOGFILE"
     validate $? "mysql root password setup"
 else 
     echo "root password already setup"
