@@ -48,7 +48,7 @@ validate $? "started mysqld service"
 #this below code is for code to be idempotent in nature
 
 
-mysql -h db.chilaka.fun -uroot -pExpenseApp@1 -e 'show DATABASES;'
+mysql -h db.chilaka.fun -u root -pExpenseApp@1 -e 'show DATABASES;'
 
 
 
