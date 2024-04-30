@@ -48,16 +48,7 @@ validate $? "started mysqld service"
 #this below code is for code to be idempotent in nature
 
 
-mysql -h db.chilaka.fun -uroot -pExpenseApp@1 -e 'show databases;' &>>LOGFILE
-if [ $? -ne 0 ]
-then 
-    echo "mysql_secure_installation --set-root-pass  &>>LOGFILE"
-    validate $? "mysql root password setup"
-else 
-    echo "root password already setup"
-fi
-
-
+mysql -h db.chilaka.fun -uroot -pExpenseApp@1 -e 'show databases;'
 
 
 
