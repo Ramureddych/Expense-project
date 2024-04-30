@@ -6,7 +6,7 @@ SCRIPT_NAME=$(echo $0 | cut -d "." -f1 )
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 echo "please enter the db password"
-read -s my-root-password
+read -s my_root_password
 
 
 validate(){
